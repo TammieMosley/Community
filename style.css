@@ -343,118 +343,8 @@ button {
   font-weight: 500;
 }
 
+    
     /* Impact Slider */
-    /* .carousel {
-      position: relative;
-    }
-
-    .carousel-inner {
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .carousel-inner::after {
-      content: '';
-      display: block;
-      clear: both;
-    }
-
-    .carousel-item {
-      position: relative;
-      float: left;
-      display: none;
-      width: 100%;
-      margin-right: -100%;
-    }
-
-    .carousel-item-active,
-    .carousel-item-pos-prev,
-    .carousel-item-pos-next {
-      display: block;
-    }
-
-    .carousel-item-pos-prev {
-      left: -100%;
-    }
-
-    .carousel-item-pos-next {
-      left: 100%;
-    }
-
-    .carousel-item-prev {
-      transform: translateX(100%);
-      transition: transform .5s ease-in-out;
-    }
-
-    .carousel-item-next {
-      transform: translateX(-100%);
-      transition: transform 0.5s ease-in-out;
-    } */
-
-    /* Fade in */
-    /* .carousel-fade .carousel-item-pos-prev,
-    .carousel-fade .carousel-item-pos-next {
-      left: 0;
-      opacity: 0;
-    }
-
-    .carousel-fade .carousel-item-prev,
-    .carousel-fade .carousel-item-next {
-      transform: none;
-      opacity: 1;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    .carousel-fade .carousel-item-active.carousel-item-prev,
-    .carousel-fade .carousel-item-active.carousel-item-next {
-      opacity: 0;
-    }
-
-
-    .carousel-indicator {
-      position: absolute;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: row;
-      gap: 0.5rem;
-      z-index: 1;
-    }
-
-    .carousel-dot {
-      display: block;
-      padding: 0.25rem;
-      background-color: rgba(0,0,0,0.5);
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background-color .5s ease-in-out;
-    }
-
-    .carousel-dot-active {
-      background-color: red;
-      cursor: default;
-      pointer-events: none;
-    }
-
-    .carousel-control {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 100%;
-      height: 100%;
-    }
-
-    .carousel-button {
-      display: block;
-      padding-inline: 1rem;
-
-    } */
-
 
     .carousel-indicators [data-bs-target] {
       text-indent: 0 !important;
@@ -462,7 +352,7 @@ button {
 
     .our-impact-slider .carousel-indicators {
       right: auto !important;
-      top: -120px !important;
+      top: -50px !important;
       bottom: auto !important;
       width: 100%;
       justify-content: start;
@@ -486,18 +376,22 @@ button {
 
     .our-impact-slider .carousel-control-prev, 
     .our-impact-slider .carousel-control-next {
-      position: absolute;
+      position: static;
       background: red;
       width: 50px;
       height: 50px;
       border-radius: 50%;
       background: #dad8d3;
       color: #333;
+      margin-right: 10px;
     }
 
-    .our-impact-slider .carousel-control-prev {
-      left: 10px !important;
-      top: 80%;
+    .impact-slider-controls {
+      position: absolute;
+      display: flex;
+      left: 0;
+      bottom: 20px;
+      width: auto;
     }
 
     @keyframes fade {
@@ -513,10 +407,7 @@ button {
       animation: fade 3s ease-in-out;
     }
 
-    .our-impact-slider .carousel-control-next {
-      left: 70px !important;
-      top: 80%;
-    }
+   
 
     .btn-ghost-bg {
       background: #C6C6D1 !important;
@@ -544,6 +435,8 @@ button {
       margin: 0 20px 20px 0;
       width: 80%;
     }
+
+    /* Impact Slider */
 /* Our Impact Section End */
 
 
@@ -587,25 +480,23 @@ button {
   line-height: 52px;
 }
 
+.news-slider-controls {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+}
+
 .news-slider .carousel-control-prev, 
 .news-slider .carousel-control-next {
-  position: absolute;
+  position: static;
   background: red;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background: #dad8d3;
   color: #333;
-}
-
-.news-slider .carousel-control-prev {
-  left: 88% !important;
-  top: 80%;
-}
-
-.news-slider .carousel-control-next {
-  right: 20px !important;
-  top: 80%;
+  margin: 0 5px;
 }
 /* Featured News Section End */
 
@@ -615,6 +506,10 @@ button {
 
 
 @media (max-width: 991.98px) {
+  .nav-cta-btns a {
+    padding: 5px 15px;
+  }
+
   .hero-wrapper {
     height: fit-content !important;
   }
@@ -638,17 +533,19 @@ button {
     margin: 30px auto 20px;
   }
 
-  .our-impact-slider .carousel-control-prev {
-    left: 35% !important;
-    bottom: -70px !important;
-    top: auto;
-  }
-  .our-impact-slider .carousel-control-next {
-    right: 35% !important;
-    left: auto !important;
-    bottom: -70px !important;
-    top: auto;
-  }
+  .our-impact-slider .carousel-control-prev, 
+    .our-impact-slider .carousel-control-next {
+      margin: 0 5px;
+    }
+
+    .impact-slider-controls {
+      position: absolute;
+      display: flex;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -60px;
+      width: auto;
+    }
 
   .news {
     padding-bottom: 130px !important;
@@ -658,15 +555,10 @@ button {
     width: 100%;
   }
 
-  .news-slider .carousel-control-prev {
-    left: 40% !important;
-    top: auto;
-    bottom: 40px;
-  }
-  .news-slider .carousel-control-next {
-    right: 40% !important;
-    top: auto;
-    bottom: 40px;
+  .news-slider-controls {
+    right: 50%;
+    bottom: 20px;
+    transform: translateX(50%);
   }
 }
 
@@ -674,7 +566,7 @@ button {
 @media (max-width: 575.98px) {
     .nav-cta-btns a {
         font-size: 10px;
-        padding: 5px 10px
+        padding: 5px 10px;
     }
 
     .hero-text {
@@ -724,6 +616,11 @@ button {
       right: 35% !important;
       top: auto;
       bottom: 25px;
+    }
+
+    .form__email {
+      width: 100% !important;
+      padding: 20px 15px !important;
     }
 }
   
